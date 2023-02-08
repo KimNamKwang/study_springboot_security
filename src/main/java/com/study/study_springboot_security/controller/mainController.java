@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class mainController {
-    @GetMapping({ "/", "" })
+public class MainController {
+    @GetMapping({ "/", "" }) /* 관리자와 일반 모두 접속 가능 */
     public ModelAndView main(ModelAndView modelAndView) {
         String viewName = "WEB-INF/views/main.jsp";
         modelAndView.setViewName(viewName);
         return modelAndView;
     }
-
 }
