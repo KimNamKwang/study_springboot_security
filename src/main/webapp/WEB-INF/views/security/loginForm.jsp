@@ -25,8 +25,11 @@
                 <input type="password" id="password" name="password" class="form-control" placeholder="Password"
                     required="">
             </p>
-            <input name="_csrf" type="hidden" value="3a05f0d6-bbab-419d-9ab0-25cdb6df909e">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <%-- 아래의 _csrf는 post방식에 무조건 들어간다. crossorigin(restFul방식) 처럼 사용자를 검증한다. session과 csrf로 검증. <input
+                name="_csrf" type="hidden" value="3a05f0d6-bbab-419d-9ab0-25cdb6df909e">
+                우리는 사용하지 않아서 주석처리
+                --%>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
     </div>
 </body>
