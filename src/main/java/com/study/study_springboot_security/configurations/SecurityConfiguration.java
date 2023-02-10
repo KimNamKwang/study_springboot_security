@@ -28,6 +28,7 @@ public class SecurityConfiguration {
 
         /* 로그인에 대한 부분 */
         httpSecurity.formLogin().loginPage("/loginForm")
+                .failureUrl("/loginForm?fail=true")
                 /*
                  * form태그가 post방식이므로 아래에서 spring의 login에게 post방식으로 던져주는것. spring이 ID와 password를
                  * 알아서 비교해준다. 아래.loginProcessingUrl()은 안 써줘도 스프링

@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.study.study_springboot_security.configurations.PrincipalUser;
 import com.study.study_springboot_security.daos.SharedDao;
 
+@Service
 public class PrincipalUserService implements UserDetailsService {
     @Autowired
     SharedDao sharedDao;

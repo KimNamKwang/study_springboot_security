@@ -30,7 +30,11 @@
                 <%-- 로그인이 되어있을때 --%>
                     <sec:authorize access="isAuthenticated()">
                         <div>
-                            ${userDetailsBean.username} , <a href="/logoutForm">Logout Form</a>
+                            ID : ${userDetailsBean.username} , Name = ${userDetailsBean.memberName}
+                        </div>
+                        <div>
+
+                            <a href="/logoutForm">Logout Form</a>
                         </div>
                     </sec:authorize>
                     <hr>
