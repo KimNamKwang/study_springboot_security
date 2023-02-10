@@ -22,6 +22,9 @@
                             <%-- 로그인이 안되있으므로 로그인 링크 띄움 --%>
                                 <a href="/loginForm">Login</a>
                         </div>
+                        <div>
+                            <a href="/joinForm">Join Form</a>
+                        </div>
                 </sec:authorize>
                 <hr>
                 <%-- 로그인이 되어있을때 --%>

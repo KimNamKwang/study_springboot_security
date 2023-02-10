@@ -6,6 +6,8 @@
 		SELECT * 
 		FROM MEMBER_WITH_AUTHORITY
 		where 1 = 1
+		<!-- where 1 = 1 은 아무런 영향이 없지만 아래 and를 여러개
+		 쓰기 편하게 하기 위해 넣는 것이다-->
 		and MEMBER_ID = #{username} 
 	</select>
 	<insert id="insertWithUID" parameterType="Map">

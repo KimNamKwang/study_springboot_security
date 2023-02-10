@@ -3,6 +3,7 @@ package com.study.study_springboot_security.configurations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration /* spring이 뜰 때 가장 먼저 뜨게 한다 */
@@ -29,7 +30,8 @@ public class SecurityConfiguration {
         httpSecurity.formLogin().loginPage("/loginForm")
                 /*
                  * form태그가 post방식이므로 아래에서 spring의 login에게 post방식으로 던져주는것. spring이 ID와 password를
-                 * 알아서 비교해준다
+                 * 알아서 비교해준다. 아래.loginProcessingUrl()은 안 써줘도 스프링
+                 * 기본내장 로그인이 자동으로 걸린다. .defaultSuccessUrl()도 똑같다 *
                  */
                 .loginProcessingUrl("/login")
                 /* 루트로 이동 */
@@ -37,4 +39,14 @@ public class SecurityConfiguration {
 
         return httpSecurity.build();/* 서버 띄우기전에 먼저 걸린다 */
     }
+
+    @Bean
+    /*
+     * interface라서 상속받아 내가 원하는대로 암호화 할 수 있지만 현재는 하지 않고
+     * 기본 spring암호화를 사용한 상태.
+     */
+    public BCryptPasswordEncoder encoderPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }
