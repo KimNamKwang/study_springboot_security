@@ -19,14 +19,14 @@ public class MainController {
         } else {
             username = principal.toString(); /* 로그아웃 상태 확인 */
         }
-        String viewName = "WEB-INF/views/main.jsp";
+        String viewName = "/WEB-INF/views/main.jsp";
         modelAndView.setViewName(viewName);
         return modelAndView;
     }
 
     @GetMapping({ "/admin" }) /* 관리자 접속 */
     public ModelAndView admin(ModelAndView modelAndView) {
-        String viewName = "WEB-INF/views/admin.jsp";
+        String viewName = "/WEB-INF/views/admin.jsp";
         modelAndView.setViewName(viewName);
         return modelAndView;
     }
