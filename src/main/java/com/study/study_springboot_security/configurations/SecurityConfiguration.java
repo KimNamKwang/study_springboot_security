@@ -23,6 +23,8 @@ public class SecurityConfiguration {
                 /* 관리자만 접근 가능 ↓ */
                 // .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/admin").authenticated()
+                .antMatchers("/manager/*").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+                .antMatchers("/admin/*").access("hasRole('ROLE_ADMIN')")
                 /* 위에 걸어준 url빼고 전부 다 접근가능(로그인) ↓ */
                 .anyRequest().permitAll();
 
